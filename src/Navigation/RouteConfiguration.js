@@ -1,17 +1,14 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import HomePage from "Homepage/Homepage";
+import AboutPage from "AboutPage/AboutPage";
+import { history } from "../configureHistory";
 
 function RouteConfiguration() {
   function Home() {
     return (
       <div>
-        <h2>Home</h2>
+        <HomePage />
       </div>
     );
   }
@@ -19,7 +16,7 @@ function RouteConfiguration() {
   function About() {
     return (
       <div>
-        <h2>About</h2>
+        <AboutPage />
       </div>
     );
   }
@@ -33,7 +30,7 @@ function RouteConfiguration() {
   }
 
   return (
-    <Router>
+    <Router history={history}>
       <div>
         <ul>
           <li>
